@@ -1,1 +1,1 @@
-# django-chat-demo
+# Django Chat Demo
