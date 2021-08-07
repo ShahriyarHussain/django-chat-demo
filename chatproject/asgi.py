@@ -8,15 +8,14 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
 """
 
 import os
-
-from channels.routing import ProtocolTypeRouter
+import django
 from channels.http import AsgiHandler
-from django.core.asgi import get_asgi_application
+from channels.routing import ProtocolTypeRouter
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatproject.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 django.setup()
-# application = get_asgi_application()
+
 application = ProtocolTypeRouter({
-    "http": AsgiHandler(),
-    # Just HTTP for now. add other protocols later
+  "http": AsgiHandler(),
+  # Just HTTP for now.
 })
